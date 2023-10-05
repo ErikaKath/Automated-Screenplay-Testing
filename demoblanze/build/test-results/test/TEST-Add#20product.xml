@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Add product" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-05T22:20:04" hostname="EKOP" time="49.459">
+  <properties/>
+  <testcase name="Add product successful" classname="Add product" time="49.459"/>
+  <system-out><![CDATA[    ?[32mGiven ?[0m?[32mHe user is on the page?[0m        ?[90m# ProductStepDefinition.heUserIsOnThePage()?[0m
+    ?[32mWhen ?[0m?[32mHe user selection the category?[0m ?[90m# ProductStepDefinition.heUserSelectionTheCategory()?[0m
+    ?[32mAnd ?[0m?[32mHe user add product?[0m             ?[90m# ProductStepDefinition.heUserAddProduct()?[0m
+    ?[32mThen ?[0m?[32mHe user  could see his product?[0m ?[90m# ProductStepDefinition.heUserCouldSeeHisProduct()?[0m
+]]></system-out>
+  <system-err><![CDATA[oct 05, 2023 5:20:05 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 117.0.5938.92 (67649b10b92bb182fba357831ef7dd6a1baa5648-refs/branch-heads/5938_62@{#14}) on port 48299
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+oct 05, 2023 5:20:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: Add product successful
+----------------------------------------------------------------------------
+]]></system-err>
+</testsuite>
