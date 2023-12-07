@@ -1,70 +1,66 @@
 package com.co.bonbonite.stepsdefinitions;
-import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.co.bonbonite.models.DataRegister;
+import com.co.bonbonite.questions.CompareRegister;
+import com.co.bonbonite.taks.Landing;
+import com.co.bonbonite.taks.Register;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actions.OpenUrl;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
+import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 public class RegisterStepDefinition {
 
-    private WebDriver driver;
+    @Managed
+    WebDriver hisBrowser;
+    @Before
+    public void setUp(){
+        OnStage.setTheStage(new OnlineCast());
+        OnStage.theActorCalled("Sergio");
+        OnStage.theActorInTheSpotlight().can(BrowseTheWeb.with(hisBrowser));
 
-
-
-    @BeforeEach
-    void setupTest() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-//        OnStage.setTheStage(new OnlineCast());
-//        OnStage.theActorCalled("Jaime");
-//        OnStage.theActorInTheSpotlight().can(BrowseTheWeb.with(driver));
     }
-
-    @AfterEach
-    void teardown() {
-        driver.quit();
-    }
-
-
-
     @Given("^He user is on the page$")
     public void heUserIsOnThePage() {
-         driver.get("https://www.bon-bonite.com/");
-//         OnStage.theActorInTheSpotlight().wasAbleTo(Open.url("https://www.bon-bonite.com/"));
-//
-//         try{
-//             ;
-//         }catch (InterruptedException e){
-//             e.printStackTrace();
-//
-//         }
-
+        OnStage.theActorInTheSpotlight().wasAbleTo(Open.url("https://www.bon-bonite.com/"));
     }
 
 
     @When("^He user register in the page$")
-    public void heUserRegisterInThePage() {
+    public void heUserRegisterInThePage(List<DataRegister>dataRegisterList) {
+        DataRegister dataRegister;
+        dataRegister = dataRegisterList.get(0);
+        OnStage.theActorInTheSpotlight().attemptsTo(Landing.landing());
+        OnStage.theActorInTheSpotlight().attemptsTo(Register.register(dataRegister));
 
     }
 
-    @Then("^He user could see the his account$")
-    public void heUserCouldSeeTheHisAccount() {
+
+    @Then("^He user could see his account$")
+    public void heUserCouldSeeHisAccount() {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(CompareRegister.compareRegister(),
+                Matchers.equalTo("Tu cesta está vacía")));
+
+    }
+
+    @When("^He user register incomplete data in the page$")
+    public void heUserRegisterIncompleteDataInThePage() {
+
+    }
+
+
+    @Then("^He user continue in the page of register$")
+    public void heUserContinueInThePageOfRegister() {
 
     }
 }

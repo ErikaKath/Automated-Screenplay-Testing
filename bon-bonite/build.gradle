@@ -1,32 +1,37 @@
+buildscript {
+    ext.serenityCoreVersion = '3.3.0'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.4.2")
+        classpath "net.serenity-bdd:serenity-single-page-report:$serenityCoreVersion"
+    }
+}
+
+plugins {
+    id "net.serenity-bdd.serenity-gradle-plugin" version "${serenityCoreVersion}"
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+defaultTasks 'clean','test','aggregate'
+
+group 'org.example'
 version '1.0-SNAPSHOT'
 
-tasks.withType(JavaCompile){ options.encoding = 'UTF-8' }
-group 'org.example'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.81")
-    }
-}
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'net.serenity-bdd.aggregator'
-
-defaultTasks 'clean', 'test', 'aggregate'
-
 
 dependencies {
-    //implementation 'net.serenity-bdd:serenity-core:2.0.81'
-    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.2.0'
 
     implementation 'net.serenity-bdd:serenity-core:2.0.81'
@@ -44,4 +49,7 @@ dependencies {
     implementation group: 'io.appium', name: 'java-client', version: '4.1.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 
+
+
 }
+

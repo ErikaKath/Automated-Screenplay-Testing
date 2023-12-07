@@ -21,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ProductStepDefinition {
 
+
     @Managed
     WebDriver hisBrowser;
     @Before
