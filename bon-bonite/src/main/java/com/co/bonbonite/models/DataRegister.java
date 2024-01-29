@@ -1,22 +1,22 @@
 package com.co.bonbonite.models;
 
 public class DataRegister {
-    private String ID;
+    private String iD;
     private String email;
     private String password;
 
-    public DataRegister(String ID, String email, String password) {
-        this.ID = ID;
+    public DataRegister(String iD, String email, String password) {
+        this.iD = iD;
         this.email = email;
         this.password = password;
     }
 
-    public String getID() {
-        return ID;
+    public String getiD() {
+        return iD;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setiD(String iD) {
+        this.iD = iD;
     }
 
     public String getEmail() {

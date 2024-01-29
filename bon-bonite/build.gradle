@@ -33,6 +33,7 @@ repositories {
 
 dependencies {
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.2.0'
+    //testImplementation 'net.serenity-bdd:serenity-ensure:3.0.5'
 
     implementation 'net.serenity-bdd:serenity-core:2.0.81'
     implementation 'net.serenity-bdd:serenity-junit:2.0.81'

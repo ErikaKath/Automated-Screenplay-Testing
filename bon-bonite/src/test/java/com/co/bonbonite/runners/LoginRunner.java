@@ -10,6 +10,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/resources/features/login.feature",
 snippets = SnippetType.CAMELCASE,
 glue = "com.co.bonbonite.stepsdefinitions",
-tags="")
+tags="@LoginIncomplete")
 public class LoginRunner {
 }

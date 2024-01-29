@@ -1,3 +1,4 @@
+#Author: Erika Olivera
 Feature: Register
 
   I as user, need register on the Bon-Bonite page to access its services
@@ -6,7 +7,7 @@ Feature: Register
   Scenario: Register Successful
     Given He user is on the page
     When He user register in the page
-      | ID       | email           | password  |
+      | iD       | email           | password  |
       | 416562   | lps@gmil.com    | ht1548*   |
       | 4578222  | klp@hotmail.com | asdec147* |
       | 23456130 | ased@yahoo.com  | aswdeq78* |

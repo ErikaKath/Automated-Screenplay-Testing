@@ -1,2 +1,5 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Register","Register Failed","SUCCESS","2023-11-28T20:32:17.035-05:00[America/Bogota]","0.0","11.83"
+"Login","Login Successful","SUCCESS","2024-01-24T14:55:34.413-05:00[America/Bogota]","0.0","28.48"
+"Login","Login failed","SUCCESS","2024-01-24T15:35:27.424-05:00[America/Bogota]","0.0","22.45"
+"Login","Login incomplete","SUCCESS","2024-01-24T15:42:39.956-05:00[America/Bogota]","0.0","22.13"
+"Register","Register Failed","SUCCESS","2024-01-24T14:54:05.761-05:00[America/Bogota]","0.0","25.81"

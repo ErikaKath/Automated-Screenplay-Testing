@@ -12,6 +12,6 @@ import org.junit.runner.RunWith;
 glue = "com.co.bonbonite.stepsdefinitions",
 snippets = SnippetType.CAMELCASE,
 plugin = "pretty",
-tags = "@RegisterSuccessful")
+tags = "@RegisterFailed")
 public class RegisterRunner {
 }

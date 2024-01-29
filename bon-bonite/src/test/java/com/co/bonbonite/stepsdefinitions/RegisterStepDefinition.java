@@ -1,7 +1,8 @@
 package com.co.bonbonite.stepsdefinitions;
 
 import com.co.bonbonite.models.DataRegister;
-import com.co.bonbonite.questions.CompareRegister;
+import com.co.bonbonite.questions.MatchRegisterFailed;
+import com.co.bonbonite.questions.MatchRegisterSuccessful;
 import com.co.bonbonite.taks.Landing;
 import com.co.bonbonite.taks.Register;
 import cucumber.api.java.Before;
@@ -37,9 +38,9 @@ public class RegisterStepDefinition {
 
 
     @When("^He user register in the page$")
-    public void heUserRegisterInThePage(List<DataRegister>dataRegisterList) {
+    public void heUserRegisterInThePage(List<DataRegister> dataRegisterRegisterList) {
         DataRegister dataRegister;
-        dataRegister = dataRegisterList.get(0);
+        dataRegister = dataRegisterRegisterList.get(2);
         OnStage.theActorInTheSpotlight().attemptsTo(Landing.landing());
         OnStage.theActorInTheSpotlight().attemptsTo(Register.register(dataRegister));
 
@@ -48,19 +49,24 @@ public class RegisterStepDefinition {
 
     @Then("^He user could see his account$")
     public void heUserCouldSeeHisAccount() {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(CompareRegister.compareRegister(),
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(MatchRegisterSuccessful.compareRegister(),
                 Matchers.equalTo("Tu cesta está vacía")));
 
     }
 
     @When("^He user register incomplete data in the page$")
-    public void heUserRegisterIncompleteDataInThePage() {
-
+    public void heUserRegisterIncompleteDataInThePage(List<DataRegister>dataRegisterList) {
+        DataRegister dataRegister;
+        dataRegister = dataRegisterList.get(1);
+        OnStage.theActorInTheSpotlight().attemptsTo(Landing.landing());
+        OnStage.theActorInTheSpotlight().attemptsTo(Register.register(dataRegister));
     }
 
 
     @Then("^He user continue in the page of register$")
     public void heUserContinueInThePageOfRegister() {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(MatchRegisterFailed.matchRegisterFailed(),
+                Matchers.equalTo("REGISTRARSE")));
 
     }
 }
