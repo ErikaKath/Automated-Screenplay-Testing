@@ -16,25 +16,6 @@ Para visualizar la versión actual del Chrome Driver en tu sistema, sigue estos 
 2. Escribe el siguiente comando y presiona Enter:
    ```bash
    chromedriver --version
-## 
-¡Claro! Aquí tienes una versión actualizada del README con aún más emojis divertidos:
-
-markdown
-Copy code
-# Actualización del Chrome Driver - Guía Rápida 🌟
-
-¡Bienvenido al proyecto de automatización con Screenplay! 🤖
-
-Este documento te guiará a través del proceso para visualizar la versión actual del Chrome Driver y cómo actualizarlo en tu proyecto, descargando el controlador desde la página oficial de Chrome. 🎉
-
-## Visualizar la versión actual del Chrome Driver
-
-Para visualizar la versión actual del Chrome Driver en tu sistema, sigue estos pasos:
-
-1. Abre una terminal. 💻
-2. Escribe el siguiente comando y presiona Enter:
-   ```bash
-   chromedriver --version
    
  ## Actualizar el Chrome Driver
 Si necesitas actualizar el Chrome Driver a la última versión, sigue estos pasos:
@@ -53,7 +34,9 @@ Si necesitas actualizar el Chrome Driver a la última versión, sigue estos paso
 💡Dentro del la carpeta Screenplay visualizaras:
 
 📋Bon-Bonite: Es un sistema de venta de productos relacionados con zaptos, bolsos cinturones, accesorios; en el cual se realiza compra de uno o varios productos luego se pasa a la pasarela de pago y se finaliza la compra (dicho usuario debe registrarse para luego loguearse). 
+
 📋Demoblanze: Es un sistema de venta de productos relacionados con monitores, laptos y phones; en el cual se realiza compra de uno o varios productos.
+
 📋Opencart: Aun en desarrollo.
 
 
